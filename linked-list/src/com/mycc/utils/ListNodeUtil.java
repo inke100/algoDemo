@@ -37,43 +37,43 @@ public class ListNodeUtil {
      * @return
      */
    public static ListNode list2Node(List<Integer> list){
-       ListNode node =null;
-       if (list == null)
-       {
-           return null;
-       }
-       Collections.reverse(list);
-       for (int value:list) {
-
-           if(node==null){
-               node=new ListNode(value);
-           }else{
-               node = new ListNode(value,node);
-           }
-
-       }
-
-       return node;
+//       ListNode node =null;
 //       if (list == null)
 //       {
 //           return null;
 //       }
+//       Collections.reverse(list);
+//       for (int value:list) {
 //
-//       ListNode head = null, tail = null;
-//       for (int t : list)
-//       {
-//           if (head == null)
-//           {
-//               head = tail = new ListNode(t);
+//           if(node==null){
+//               node=new ListNode(value);
+//           }else{
+//               node = new ListNode(value,node);
 //           }
-//           else
-//           {
-//               tail.next = new ListNode(t);
-//               tail = tail.next;
-//           }
+//
 //       }
 //
-//       return head;
+//       return node;
+       if (list == null)
+       {
+           return null;
+       }
+
+       ListNode head = null, tail = null;
+       for (int t : list)
+       {
+           if (head == null)
+           {
+               head = tail = new ListNode(t);
+           }
+           else
+           {
+               tail.next = new ListNode(t);
+               tail = tail.next;
+           }
+       }
+
+       return head;
    }
     public  static List<Integer>  node2List(ListNode node){
         List<Integer>  list =new ArrayList<Integer>();
